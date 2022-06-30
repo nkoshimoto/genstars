@@ -619,6 +619,8 @@ int main(int argc,char **argv)
   int BINARY      = getOptiond(argc,argv,"BINARY",   1,  0);
   int EXTLAW      = getOptiond(argc,argv,"EXTLAW",   1,  1);
   int EXTMAP      = getOptiond(argc,argv,"EXTMAP",   1,  1); // Default set to be 1 for public version.
+  if (EXTMAP == 0)
+    EXTMAP = 1;  // EXTMAP == 0 is unavailable in the public version because the extinction map is too heavy to be controlled under git
   // long   NSIMU    = getOptionl(argc,argv,"NSIMU",  1, 0); // Default: NSIMU = fSIMU x [star count]
   long   NSIMU    = 0; // Default: NSIMU = fSIMU x [star count]
   double lst   = getOptiond(argc,argv,"l",  1,  1.875);
@@ -644,7 +646,7 @@ int main(int argc,char **argv)
   printf("#        NSC= %d     (0: no NSC, 1: Chatzopoulos+15's NSC)\n", NSC);
   printf("#        NSD= %d     (0: no NSD, 1: Portail+17's NSD, 2: Sormani+22-like NSD, 3: Use Sormani+22's DF's moments)\n", NSD);
   printf("#     EXTLAW= %d     (0: Alonso-Garcia+17's ext. law , 1: Nishiyama+09's ext. law , 2: Wang&Chen19's law)\n", EXTLAW);
-  printf("#     EXTMAP= %d     (0: 0.0025x0.0025 deg^2 (slowest), 1: 0.005x0.005 deg^2, 2: 0.025x0.025 deg^2 (fastest))\n", EXTMAP);
+  printf("#     EXTMAP= %d     (0: 0.0025x0.0025 deg^2 (slowest, unavailable in the public ver.), 1: 0.005x0.005 deg^2, 2: 0.025x0.025 deg^2 (fastest))\n", EXTMAP);
   printf("#     BINARY= %d     (0: no binary , 1: with binary )\n", BINARY);
   printf("#  VERBOSITY= %d     (0: no output , 1: output , 2: more output, 3: 2+each extinction)\n", VERBOSITY);
   printf("#       seed= %ld    (random seed value )\n", seed0);
