@@ -12,7 +12,7 @@ The paper describing the new model is currently in preparation, and will be link
 
 A simulator for microlensing events, [`genulens`](https://github.com/nkoshimoto/genulens), is also available.
 
-The copyright of an included supplementary code, "option.cpp", belongs to Ian A. Bond and Takahiro Sumi.
+The copyright of an included supplementary code, "option.c", belongs to Ian A. Bond and Takahiro Sumi.
 
 
 ## Before installation
@@ -35,7 +35,7 @@ This is recommended because that way you can track any future updates with `git`
 
 If you do not have `git`, you can simply download the package by clicking the green button "Code" on the upper right in [the repository page](https://github.com/nkoshimoto/genstars), selecting "Download ZIP", and then unzipping it.
 
-You need a C compiler to `make` using Makefile to compile the program genstars.cpp in the downloaded directory.
+You need a C compiler to `make` using Makefile to compile the program genstars.c in the downloaded directory.
 The default compiler is `clang`, which is available in macOS.
 Please replace the first uncommented line in Makefile with `gcc` or any other C compiler if you prefer.
 If you are not sure if you have `clang` or `gcc`, you can check it by
