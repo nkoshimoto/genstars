@@ -1,0 +1,6 @@
+*.o
+*.swp
+*tmp*
+*Untitled*
+.DS_Store
+genstars
