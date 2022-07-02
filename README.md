@@ -8,7 +8,7 @@ A difference from other population synthesis tools is that the Galactic model us
 Currently the simulation is only available inside a box with -9.5 < l < 9.5 and -10.0 < b < 4.5 because it uses the VVV extinction map combining the ones by [Gonzalez et al. (2012)](https://ui.adsabs.harvard.edu/abs/2012A%26A...543A..13G/abstract) and [Surot et al. (2020)](https://ui.adsabs.harvard.edu/abs/2020A%26A...644A.140S/abstract) to calculate extinction values. 
 
 Although the Galactic model was originally developed for the Galactic bulge region in |b| > 1 deg. `genstars` uses a newly developed version of the model that includes the nuclear stellar disk (NSD) model based on [Sormani et al. (2022)](https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.1857S/abstract).
-The paper describing the new model is currently in preparation, and will be linked here as long as it becomes available.  
+A paper describing the new model is currently in preparation, and will be linked here as long as it becomes available.  
 
 A simulator for microlensing events, [`genulens`](https://github.com/nkoshimoto/genulens), is also available.
 
