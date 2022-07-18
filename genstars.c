@@ -2292,7 +2292,7 @@ void get_MAG_MLfiles(int ROMAN, char **MAG, char **MLfiles, double *lameff){
                      "input_files/isochrone_thin3.dat", "input_files/isochrone_thin4.dat",
                      "input_files/isochrone_thin5.dat", "input_files/isochrone_thin6.dat",
                      "input_files/isochrone_thin7.dat", "input_files/isochrone_thick.dat",
-                     "input_files/isochrone_bar.dat"  , "input_files/isochrone_nsd.dat"   };
+                     "input_files/isochrone_bar.dat"  , "input_files/isochrone_NSD.dat"   };
     double lams[] = {1240, 1664, 2164, 867.590, 1367.793, 2112.465}; // J,H,Ks from Table 1 of Nishiyama+09, Roman-bands are based on output of PARSEC isochrone webpage, nband should be used
     for (int i = 0; i < nband; i++){
       strcpy(MAG[i], M[i]);
@@ -2308,7 +2308,7 @@ void get_MAG_MLfiles(int ROMAN, char **MAG, char **MLfiles, double *lameff){
                      "input_files/isoemp_thin3.dat", "input_files/isoemp_thin4.dat",
                      "input_files/isoemp_thin5.dat", "input_files/isoemp_thin6.dat",
                      "input_files/isoemp_thin7.dat", "input_files/isoemp_thick2.dat",
-                     "input_files/isoemp_bar.dat"  , "input_files/isoemp_nsd.dat"   };
+                     "input_files/isoemp_bar.dat"  , "input_files/isoemp_NSD.dat"   };
     // double lams[] = {549.056, 805.988, 1237.560, 1647.602, 2162.075}; // based on output of PARSEC isochrone webpage
     double lams[] = {549.056, 805.988, 1240, 1664, 2164}; // V, I are based on output of PARSEC isochrone webpage, J,H,Ks from Table 1 of Nishiyama+09
     for (int i = 0; i < nband; i++){
