@@ -73,7 +73,7 @@ returns output lines that starts from
 > \#   Output of "./genstars "
 
 and ends with
-> \# (n\_BD n\_MS n\_WD n\_NS n\_BH)/n\_all= ( 781666 1444566 251713  10609   5235 ) / 2493789 = ( 0.313445 0.579266 0.100936 0.004254 0.002099 )
+> \# (n\_BD n\_MS n\_WD n\_NS n\_BH)/n\_all= (  78317 144302  25174   1085    503 ) / 249381 = ( 0.314046 0.578641 0.100946 0.004351 0.002017 )
 
 
 you are ready to use `genstars`. Note that the exact numbers of the end line might depend on your environment because the calculation uses random numbers.
