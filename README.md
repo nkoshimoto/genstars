@@ -1,5 +1,5 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](http://www.gnu.org/licenses/gpl-3.0)
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6941087.svg)](https://doi.org/10.5281/zenodo.6941087)
 
 
 # genstars
@@ -9,6 +9,7 @@ Currently the simulation is only available inside a box with -9.5 < l < 9.5 and 
 
 Although the Galactic model was originally developed for the Galactic bulge region in |b| > 1 deg. `genstars` uses a newly developed version of the model that includes the nuclear stellar disk (NSD) model based on [Sormani et al. (2022)](https://ui.adsabs.harvard.edu/abs/2022MNRAS.512.1857S/abstract).
 A paper describing the new model is currently in preparation, and will be linked here as long as it becomes available.  
+The code itself has been published as [Koshimoto (2022), Zenodo.6941086](https://doi.org/10.5281/zenodo.6941086).
 
 A simulator for microlensing events, [`genulens`](https://github.com/nkoshimoto/genulens), is also available.
 
