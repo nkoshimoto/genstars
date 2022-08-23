@@ -674,6 +674,7 @@ int main(int argc,char **argv)
   double ncntall = 0, ncnts = 0, ncntbWD = 0, ncntbCD = 0;
   double ncntcomp[12] = {}; // should be > ncomp. Prepare 12 just in case
   double nBD = 0, nMS = 0, nWD = 0, nNS= 0, nBH =  0;
+  int nerror = 0;
   while (fgets(line,1000,fp) !=NULL){
     int nwords = split((char*)" ", line, words);
     if (*words[0] == '#') continue;
@@ -1028,6 +1029,12 @@ int main(int argc,char **argv)
          }else if (Msmin == 0 && Msmax == 0 && MIen - MIst > 20){
            Msmin = Ml; // Consider down to minimum mass
            Msmax = Minis[i_s][nMLrel[i_s]-1];
+         }else if (Msmin == 0 && Msmax == 0 && MIen - Mags[iMag][i_s][nMLrel[i_s]-1] > -2){
+           // A case where Msen = Magmin - infinitesimal, sometimes happen when Magrange is brightest region
+           // Because Magmin is not stored, Mags[iMag][i_s][nMLrel[i_s]-1] is used instead
+           nerror ++;
+           j--;
+           continue;
          }else if (Msmin == 0 && Msmax == 0){
            printf("Error: Something goes wrong, exit!\n");
            exit(1);
@@ -1299,6 +1306,7 @@ int main(int argc,char **argv)
   }
   fclose(fp);
   printf ("# sumM_MS/sumN_MS= %9.2f / %6.0f = %.6f Msun/*\n", allmass, allstars, allmass/allstars);
+  // printf ("# nerror= %d\n", nerror);
   if (BINARY == 1) printf ("# (n_single n_binwide n_binclose)/n_all= ( %6.0f %6.0f %6.0f ) / %6.0f = ( %.6f %.6f %.6f )\n", ncnts, ncntbWD, ncntbCD, ncntall,ncnts/ncntall,ncntbWD/ncntall,ncntbCD/ncntall);
   printf ("# (n_thin1-7 n_thick n_bar n_nsd)/n_all= ( %6.0f %6.0f %6.0f %6.0f %6.0f %6.0f %6.0f %6.0f %6.0f %6.0f ) / %6.0f = ( %.6f %.6f %.6f %.6f %.6f %.6f %.6f %.6f %.6f %.6f )\n", ncntcomp[0], ncntcomp[1], ncntcomp[2], ncntcomp[3], ncntcomp[4], ncntcomp[5], ncntcomp[6], ncntcomp[7], ncntcomp[8], ncntcomp[9], ncntall, ncntcomp[0]/ncntall, ncntcomp[1]/ncntall, ncntcomp[2]/ncntall, ncntcomp[3]/ncntall, ncntcomp[4]/ncntall, ncntcomp[5]/ncntall, ncntcomp[6]/ncntall, ncntcomp[7]/ncntall, ncntcomp[8]/ncntall, ncntcomp[9]/ncntall);
   printf ("# (n_BD n_MS n_WD n_NS n_BH)/n_all= ( %6.0f %6.0f %6.0f %6.0f %6.0f ) / %6.0f = ( %.6f %.6f %.6f %.6f %.6f )\n", nBD, nMS, nWD, nNS, nBH,ncntall, nBD/ncntall, nMS/ncntall, nWD/ncntall, nNS/ncntall, nBH/ncntall);
