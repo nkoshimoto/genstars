@@ -1123,8 +1123,10 @@ int main(int argc,char **argv)
            fREM = pout[1]; // fREM should be double if mean == 1, but int here cuz mean == 0
            Rad_s = 1.0/109.0; // Earth radius for white dwarf
            if (fREM >= 2){ // Add kick velocity for NS or BH
-             double phitmp = ran1()*2*PI;
-             double thetatmp = ran1()*PI;
+             // double phitmp = ran1()*2*PI; // not correct
+             // double thetatmp = ran1()*PI;
+             double thetatmp = asin(1 - 2*ran1());
+             double phitmp   = ran1()*2*PI - PI;
              double vkick = (fREM == 2) ? 350 : 100;  // Table 2 of Lam et al. 2020
              double vxadd =  vkick * cos(thetatmp) * cos(phitmp);
              double vyadd =  vkick * cos(thetatmp) * sin(phitmp);
