@@ -40,6 +40,9 @@
  *   EXTLAW == 2 (Wang & Chen (2019), ApJ, 877, 116) is added
  * Update on Apr 8 2022 
  *   CenSgrA option added to put SgrA* on the GC
+ * Update on Feb 16 2023
+ *   RenShu is increased to 12200 (from 9200) for increasing Dmax up to 20 kpc.
+ *   Note that the disk model does not include the flare structure that is expected to begin rising outward from R ~ 8 kpc, so results with Dmax > 16 kpc would be affected by that.
  * */
 #include <math.h> 
 #include <stdio.h> 
@@ -165,7 +168,8 @@ static double medtauds[8] = {0.075273, 0.586449, 1.516357, 2.516884, 4.068387, 6
  * Please change the following zenShu and/or RenShu value when you want to extend 
  * the line of sight outside of the default cylinder. */
 static int zstShu =   0, zenShu = 3600, dzShu = 200;
-static int RstShu = 500, RenShu = 9200, dRShu = 100; // use value @ RstShu for R < RstShu
+// static int RstShu = 500, RenShu = 9200, dRShu = 100; // use value @ RstShu for R < RstShu
+static int RstShu = 500, RenShu = 12200, dRShu = 100; // use value @ RstShu for R < RstShu
 
 //--- For Bulge kinematics ------
 static int model_vb, model_vbz;
