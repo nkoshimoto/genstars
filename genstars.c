@@ -2280,7 +2280,7 @@ double getcumu2xist(int n, double *x, double *F, double *f, double Freq, int ist
           double b = f[i-1] - 2*a*x[i-1];
           double c = a*x[i-1]*x[i-1] - f[i-1]*x[i-1] + F[i-1] - Freq;
           double xreq = (a != 0) ? (-b + sqrt(b*b - 4*a*c)) * 0.5/a  // root of ax^2 +bx + c
-                                 : (x[i]-x[i-1])/(F[i]-F[i-1])*(Freq-F[i-1]) + F[i-1];
+                                 : (x[i]-x[i-1])/(F[i]-F[i-1])*(Freq-F[i-1]) + x[i-1];
           return xreq;
        }
     }
@@ -2291,7 +2291,7 @@ double getcumu2xist(int n, double *x, double *F, double *f, double Freq, int ist
           double b = f[i-1] - 2*a*x[i-1];
           double c = a*x[i-1]*x[i-1] - f[i-1]*x[i-1] + F[i-1] - Freq;
           double xreq = (a != 0) ? (-b + sqrt(b*b - 4*a*c)) * 0.5/a  // root of ax^2 +bx + c
-                                 : (x[i]-x[i-1])/(F[i]-F[i-1])*(Freq-F[i-1]) + F[i-1];
+                                 : (x[i]-x[i-1])/(F[i]-F[i-1])*(Freq-F[i-1]) + x[i-1];
           return xreq;
        }
     }
